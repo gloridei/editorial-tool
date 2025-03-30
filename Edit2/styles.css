@@ -9,3 +9,16 @@
     margin-bottom: 10px;
 }
 
+.container {
+    display: flex;
+    justify-content: space-around;
+    
+    align-items: flex-start;
+    
+}
+
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+}

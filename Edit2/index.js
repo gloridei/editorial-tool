@@ -22,7 +22,7 @@ var template = ""
 var tem1 = "<iframe height='569' src='https://embed."
 var tem2 = "' width='640px' scrolling='no' allowfullscreen='true' sandbox='allow-scripts allow-same-origin allow-popups' allow='clipboard-read; clipboard-write' style='border: none; max-width: 100%; border-radius: 8px; display: block; margin: 0px auto;'></iframe>"
 
-btn[1].addEventListener("click", genIframe)
+btn[2].addEventListener("click", genIframe)
 
 function genIframe() {
   let input = yourLinkReddit.value 
@@ -41,14 +41,19 @@ function genIframe() {
 var yourLinkTwitter = document.getElementById("your-link-Twitter")
 var twitter = document.getElementById("twitter")
 
-btn[2].addEventListener("click", xToTwitter)
+btn[1].addEventListener("click", xToTwitter)
 
 function xToTwitter() {
   let input = yourLinkTwitter.value 
-  let res = input.replace("x", "twitter")
+  let scroll = 'scrolling="no"'
+  let parts = input.split(">")
+  let temp1 = parts[0].replace('width="504"', 'width="704"')
+  let temp2 = parts[1]
+  
+  let res = temp1 + ' ' + scroll + ">" + temp2 + '>'
   twitter.value = res
-
 }
+
 
 var yourLinkInstagram = document.getElementById("your-link-Instagram")
 var instagram = document.getElementById("instagram")
